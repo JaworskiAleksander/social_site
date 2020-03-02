@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Star Social Site</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    Link to a master.css file
+    <link rel="stylesheet" href="{% static 'social_site/css/master.css' %}">
+
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg bg-dark mynav" role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-nav align-items-center">
+                <a class="navbar-brand mynav" href="{% url 'home' %}">Star Social Site</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <a href="">Post</a>
+                    <a href="">Groups</a>
+                    <a href="">Create Group</a>
+                    <a href="{% url 'accounts:logout' %}">Log out</a>
+                {% else %}
+                    <a href="">Groups</a>
+                    <a href="{% url 'accounts:login' %}">Log In</a>
+                    <a href="{% url 'accounts:signup' %}">Sign Up</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
     {% block content %}
     
     {% endblock %}
