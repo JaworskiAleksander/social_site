@@ -13,3 +13,8 @@
 +
 +
 +
+
+
+
+# Additional info
++ use `git log --oneline` to see simplified history of how this project is/was made
