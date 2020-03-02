@@ -8,4 +8,8 @@ from . import forms
 
 # Create your views here.
 class SignUp(CreateView):
-    pass
+    form_class = forms.UserCreateForm
+    success_url = reverse_lazy('login')
+    # if it was reverse(), users would be automatically reversed, before hitting submit button
+    template_name = 'accounts/signup.html'
+
