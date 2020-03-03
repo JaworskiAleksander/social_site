@@ -18,6 +18,10 @@
 + install conda
 + install django
 + install bootstrap -> `pip install django-bootstrap4`
++ python commands:
+    `python manage.py migrate`
+    `python manage.py makemigrations`
+    `python manage.py runserver`
 
 
 # Additional info
