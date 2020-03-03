@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-
+from django.contrib.auth import login, logout
 # app imports
 from . import forms
 
