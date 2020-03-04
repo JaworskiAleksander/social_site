@@ -19,7 +19,7 @@
 + install django
 + install bootstrap -> `pip install django-bootstrap4`
 + install misaka -> `pip install misaka`
-+ python commands:
++ python commands: //necessary to create db based on models.py
     `python manage.py migrate`
     `python manage.py makemigrations`
     `python manage.py runserver`
