@@ -18,6 +18,7 @@
 + install conda
 + install django
 + install bootstrap -> `pip install django-bootstrap4`
++ install misaka -> `pip install misaka`
 + python commands:
     `python manage.py migrate`
     `python manage.py makemigrations`
