@@ -11,7 +11,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class Post(models.Model):
-    # User is known thanks to get_user_model; django takes care of that for us!
+    # User model is known thanks to get_user_model; django takes care of that for us!
     user = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
     message = models.TextField()
@@ -39,6 +39,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        unique_together = ['user', 'message'] # this can also be a tuple
+        unique_together = ['user', 'message'] # this can also be a tuple; every message is uniquely linked to a user
+    
     
     
