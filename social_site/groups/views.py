@@ -19,3 +19,10 @@ class CreateGroup(LoginRequiredMixin, generic.CreateView):
     fields = ('name','description') # only those fields will be shown with a form tag
     model = Group # this model will be used to store data in db.sqlite3
 
+# display detailed information about a group - posts, members, et c.
+class SingleGroup(generic.DetailView):
+    model = Group
+
+class ListGroup(generic.ListView):
+    model = Group
+
