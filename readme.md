@@ -29,4 +29,14 @@
 
 # Additional info
 + use `git log --oneline` to see simplified history of how this project is/was made
-+ use `pip install django-bootstrap4`
++ slugify - makes it a lot easier to handle it
+    + necessary import in your models.py
+        `from django.utils.text import slugify`
+    + inside a model class (models.py) add this field
+        `slug = models.SlugField(allow_unicode=True, unique = True)`
+    + within that class, redefine save() method
+        ```python
+        def save(self, *args, **kwargs):
+            self.slug = slugify(self.name) # this is where you tell which fields will be slugified
+            super().save(*args, **kwargs)
+        ```
