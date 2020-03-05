@@ -19,6 +19,8 @@
 + install django
 + install bootstrap -> `pip install django-bootstrap4`
 + install misaka -> `pip install misaka`
++ install braces -> `pip install django-braces`
+    + allows to access Mixins to use with CBV
 + python commands: //necessary to create db based on models.py
     `python manage.py migrate`
     `python manage.py makemigrations`
