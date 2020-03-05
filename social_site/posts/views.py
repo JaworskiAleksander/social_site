@@ -54,3 +54,15 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
         return queryset.filter(
             user__username__isexact = self.kwargs.get('username')
         )
+
+class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
+    # from model Post, allow fields 'message' and 'groups' to be modified
+    fields = ('message', 'groups')
+    model = models.Post
+
+    # connect the post with the actual user
+    def form_valid(self, form):
+        self.object = form.save(commit = False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super().form_valid(form)
