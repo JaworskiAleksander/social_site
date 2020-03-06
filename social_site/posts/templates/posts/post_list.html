@@ -3,7 +3,7 @@
 
 {% block pre_post_content %}
 <div class='col-md-4'>
-    {% if user.is_authenticated %}
+    {% if request.user.is_authenticated %}
         <div class="card card-with-shadow">
             <div class="content">
                 <h5>Your Groups</h5>
