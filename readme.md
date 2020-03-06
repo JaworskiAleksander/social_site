@@ -33,7 +33,7 @@
 
 
 # Additional info
-+ use `git log --oneline` to see simplified history of how this project is/was made
++ use `git log --oneline --reverse` to see simplified history of how this project is/was made
 + slugify - makes it a lot easier to handle it
     + necessary import in your models.py
         + `from django.utils.text import slugify`
