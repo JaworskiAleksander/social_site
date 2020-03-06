@@ -2,7 +2,9 @@
 {% block post_content %}
 <h3>Confirm delete of this post</h3>
 <div class="posts">
-    <!-- inject post template, with post being equal to object that called it, and hide delete button -->
+    {% comment %}
+        inject post template, with post being equal to object that called it, and hide delete button
+    {% endcomment %}
     {% include 'posts/_posts.html' with post=object hide_delete=true %}
 </div>
 

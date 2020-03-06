@@ -1,5 +1,7 @@
-<!-- this piece of code is intended to be injected in other templates using 'include' tag
-no need to extend, as the content of this template will be always injected in other templates -->
+{% comment %}
+This piece of code is intended to be injected in other templates using 'include' tag
+no need to extend, as the content of this template will be always injected in other templates
+{% endcomment %}
 
 <div class="media">
     <h3 class="mr-5"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
