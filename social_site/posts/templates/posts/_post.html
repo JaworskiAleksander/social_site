@@ -4,12 +4,12 @@ no need to extend, as the content of this template will be always injected in ot
 {% endcomment %}
 
 <div class="media">
-    <h3 class="mr-5"><a href="{% url 'posts:for_user' username=post.user.username%}">
-        @{{ post.user.username }}</a></h3>
+    <h3 class="mr-5"></h3>
 
     <div class="media-body">
-        <strong>{{ post.user.username }}</strong>
         <h5>{{ post.message_html|safe }}
+            <a href="{% url 'posts:for_user' username=post.user.username%}">
+                @{{ post.user.username }}</a>,
             <time class="time">
                 <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">
                     {{ post.created_at }}</a>
