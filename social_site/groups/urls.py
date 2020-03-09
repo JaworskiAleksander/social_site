@@ -9,4 +9,6 @@ urlpatterns = [
     path('new/', views.CreateGroup.as_view(), name='create'),
     # when a loged user wants to see all posts in a single group:
     path('posts/in/<slug>/', views.SingleGroup.as_view(), name='single'),
+    path('join/<slug>/', views.JoinGroup.as_view(), name='join'),
+    path('leave/<slug>/', views.LeaveGroup.as_view(), name='leave'),
 ]
