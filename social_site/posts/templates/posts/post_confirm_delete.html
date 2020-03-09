@@ -5,7 +5,7 @@
     {% comment %}
         inject post template, with post being equal to object that called it, and hide delete button
     {% endcomment %}
-    {% include 'posts/_post.html' with post=object hide_delete=true %}
+    {% include 'posts/_post.html' with post=object hide_delete=True %}
 </div>
 
 <form method="post">
