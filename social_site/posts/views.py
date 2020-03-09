@@ -33,7 +33,7 @@ class UserPosts(generic.ListView):
             # get all objects related to "post", and from those grab all that
             # match username
             self.post_user = User.objects.prefetch_related("posts").get(
-                username__isexact=self.kwargs.get("username")
+                username__iexact=self.kwargs.get("username")
             )
         except User.DoesNotExist:
             raise Http404
@@ -52,7 +52,7 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
     def get_queryset(self):
         queryset= super().get_queryset()
         return queryset.filter(
-            user__username__isexact = self.kwargs.get('username')
+            user__username__iexact = self.kwargs.get('username')
         )
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
@@ -62,7 +62,7 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
 
     # connect the post with the actual user
     def form_valid(self, form):
-        self.object = form.save(commit = False)
+        self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
