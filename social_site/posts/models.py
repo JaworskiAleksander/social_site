@@ -24,9 +24,9 @@ class Post(models.Model):
         return self.message
 
     # when someone writes using markdown or posts a link, it gets properly supported
-    def save(*args, **kwargs):
-        self.message_html = misaka(self.message)
-        super().save(**args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.message_html = misaka.html(self.message)
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse(
