@@ -2,6 +2,8 @@
 # link it to the social_site.urls.py
 
 from django.views.generic import TemplateView
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 class TestPage(TemplateView):
     template_name = 'test.html'
