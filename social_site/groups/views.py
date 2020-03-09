@@ -32,15 +32,16 @@ class ListGroup(generic.ListView):
 
 # in order to join a group, you have to be loged in
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
-
+    # once a person performs this action, this is where they'll be redirected
     def get_redirect_url(self, *args, **kwargs):
         return reverse('groups:single', kwargs={'slug':self.kwargs.get('slug')})
 
-    # checking if user is already a member of this group
     def get(self, request, *args, **kwargs):
+        # checking if a group exists
         group = get_object_or_404(Group, slug=self.kwargs.get('slug'))
 
         try:
+            # create user-group link using GroupMember model
             GroupMember.objects.create(user=self.request.user, group=group)
         except IntegrityError:
             messages.warning(
@@ -56,6 +57,7 @@ class JoinGroup(LoginRequiredMixin, generic.RedirectView):
         return super().get(request, *args, **kwargs)
 
 class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
+    # once a person performs this action, this is where they;ll be redirected
     def get_redirect_url(self, *args, **kwargs):
         return reverse('groups:single', kwargs={'slug':self.kwargs.get('slug')})
 
