@@ -62,6 +62,7 @@ class LeaveGroup(LoginRequiredMixin, generic.RedirectView):
         return reverse('groups:single', kwargs={'slug':self.kwargs.get('slug')})
 
     def get(self,request, *args, **kwargs):
+        # check if a group exists
         group = get_object_or_404(Group, slug=self.kwargs.get('slug'))
 
         try:
