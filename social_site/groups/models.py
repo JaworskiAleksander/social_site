@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify   # allows to remove unwanted characters
+from django.urls import reverse
+from django.conf import settings
 
 
 # Create your models here.
