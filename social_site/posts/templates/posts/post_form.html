@@ -1,9 +1,10 @@
+{% extends 'posts/post_base.html' %}
+{% load bootstrap4 %}
+
 {% comment %}
 html template to create new posts
 {% endcomment %}
 
-{% extends 'posts/post_base.html' %}
-{% load bootstrap4 %}
 
 {% block post_content %}
     <h4>Create a new post</h4>
@@ -12,6 +13,6 @@ html template to create new posts
         {% bootstrap_form form %}
         {% buttons %}
             <input type="button" value="Post it!" class="btn btn-success">
-        {% buttons %}
+        {% endbuttons %}
     </form>
 {% endblock %}

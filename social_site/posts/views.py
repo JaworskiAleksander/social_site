@@ -57,7 +57,7 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     # from model Post, allow fields 'message' and 'groups' to be modified
-    fields = ('message', 'groups')
+    fields = ('message', 'group')
     model = models.Post
 
     # connect the post with the actual user
