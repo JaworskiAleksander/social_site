@@ -2,7 +2,7 @@
     padding-top: 100px;
    border: 10px solid red;
 }
-  
+
 html, body {
     height: 100%;
     width: 100%;
@@ -10,8 +10,7 @@ html, body {
     background: #191063;
     margin: 0;
 }
-  
-  
+
 #note {
     position: absolute;
     color: rgba(249,241,204,1);
