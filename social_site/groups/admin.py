@@ -11,5 +11,6 @@ class GroupMemberInline(admin.TabularInline):
 # naming convention: ModelClass+Admin
 class GroupAdmin(admin.ModelAdmin):
     fields = ['name','description', 'slug']
+    search_fields=['name', 'slug']
 
 admin.site.register(models.Group, GroupAdmin)
