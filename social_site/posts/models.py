@@ -21,7 +21,7 @@ class Post(models.Model):
 # get absolute url - when someone posts something, this is where they'll be sent through
     # methods
     def __str__(self):
-        return self.message
+        return self.user.username + "@" + self.group.name + ' : ' + self.message
 
     # when someone writes using markdown or posts a link, it gets properly supported
     def save(self, *args, **kwargs):
